@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background gradient: deep #172531 to #2C4654 -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#2C4654"/>
+      <stop offset="100%" stop-color="#172531"/>
+    </radialGradient>
+    <!-- Brain golden glow -->
+    <radialGradient id="brainGlow" cx="50%" cy="48%" r="45%">
+      <stop offset="0%" stop-color="#F3BD68" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#F3BD68" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Brain fill gradient -->
+    <linearGradient id="brainFill" x1="30%" y1="20%" x2="70%" y2="80%">
+      <stop offset="0%" stop-color="#F3BD68"/>
+      <stop offset="60%" stop-color="#C7843B"/>
+      <stop offset="100%" stop-color="#a8692e"/>
+    </linearGradient>
+    <!-- Subtle inner shadow for brain -->
+    <filter id="brainShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="8" flood-color="#000101" flood-opacity="0.5"/>
+    </filter>
+    <!-- Glow filter for brain -->
+    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="roundedClip">
+      <rect width="512" height="512" rx="96" ry="96"/>
+    </clipPath>
+  </defs>
+
+  <!-- Rounded background -->
+  <g clip-path="url(#roundedClip)">
+    <rect width="512" height="512" fill="url(#bgGrad)"/>
+    <!-- Subtle ambient glow behind brain -->
+    <ellipse cx="256" cy="248" rx="180" ry="160" fill="url(#brainGlow)"/>
+    
+    <!-- Minimal tech grid lines (very subtle) -->
+    <line x1="0" y1="256" x2="512" y2="256" stroke="#4D6473" stroke-width="0.5" stroke-opacity="0.3"/>
+    <line x1="256" y1="0" x2="256" y2="512" stroke="#4D6473" stroke-width="0.5" stroke-opacity="0.3"/>
+  </g>
+
+  <!-- BRAIN - clean, minimal, futuristic silhouette -->
+  <!-- Designed as a clean geometric brain shape at 512x512 -->
+  <!-- Left hemisphere -->
+  <g filter="url(#brainShadow)" clip-path="url(#roundedClip)">
+    <path d="
+      M 256 155
+      C 240 145, 210 140, 192 148
+      C 172 156, 158 172, 152 192
+      C 142 188, 128 192, 120 204
+      C 110 218, 112 236, 120 248
+      C 110 256, 106 270, 110 284
+      C 114 300, 128 310, 144 312
+      C 148 328, 158 340, 172 346
+      C 188 352, 206 348, 218 340
+      C 228 348, 242 354, 256 354
+      L 256 155 Z
+    " fill="url(#brainFill)" filter="url(#glowFilter)"/>
+
+    <!-- Right hemisphere -->
+    <path d="
+      M 256 155
+      C 272 145, 302 140, 320 148
+      C 340 156, 354 172, 360 192
+      C 370 188, 384 192, 392 204
+      C 402 218, 400 236, 392 248
+      C 402 256, 406 270, 402 284
+      C 398 300, 384 310, 368 312
+      C 364 328, 354 340, 340 346
+      C 324 352, 306 348, 294 340
+      C 284 348, 270 354, 256 354
+      L 256 155 Z
+    " fill="url(#brainFill)" filter="url(#glowFilter)"/>
+
+    <!-- Center dividing line (interhemispheric fissure) -->
+    <line x1="256" y1="165" x2="256" y2="350" stroke="#172531" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+
+    <!-- Brain fold lines - LEFT -->
+    <path d="M 188 210 Q 210 220, 196 238 Q 180 254, 200 268 Q 218 280, 204 298" 
+      fill="none" stroke="#172531" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 152 248 Q 172 240, 178 258 Q 184 276, 168 284" 
+      fill="none" stroke="#172531" stroke-width="3.5" stroke-linecap="round" opacity="0.65"/>
+    <path d="M 226 200 Q 236 218, 224 232" 
+      fill="none" stroke="#172531" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- Brain fold lines - RIGHT -->
+    <path d="M 324 210 Q 302 220, 316 238 Q 332 254, 312 268 Q 294 280, 308 298" 
+      fill="none" stroke="#172531" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 360 248 Q 340 240, 334 258 Q 328 276, 344 284" 
+      fill="none" stroke="#172531" stroke-width="3.5" stroke-linecap="round" opacity="0.65"/>
+    <path d="M 286 200 Q 276 218, 288 232" 
+      fill="none" stroke="#172531" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- Tiny neural spark dots -->
+    <circle cx="176" cy="226" r="4" fill="#F3BD68" opacity="0.9"/>
+    <circle cx="336" cy="226" r="4" fill="#F3BD68" opacity="0.9"/>
+    <circle cx="164" cy="272" r="3" fill="#F3BD68" opacity="0.7"/>
+    <circle cx="348" cy="272" r="3" fill="#F3BD68" opacity="0.7"/>
+
+    <!-- Stem / brainstem at bottom -->
+    <rect x="238" y="348" width="36" height="22" rx="8" fill="url(#brainFill)" opacity="0.85"/>
+    <rect x="246" y="368" width="20" height="16" rx="4" fill="#C7843B" opacity="0.7"/>
+  </g>
+</svg>
