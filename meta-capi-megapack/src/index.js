@@ -1,26 +1,8 @@
-// ============================================================
-// META CONVERSIONS API - CLOUDFLARE WORKER
-// Proyecto: Megapack Productividad Total - Mentes Maestras
-// ============================================================
-//
-// ¿QUÉ HACE ESTE ARCHIVO?
-// Es el servidor privado que actúa como intermediario entre
-// tu página HTML y la API de Meta. El Access Token nunca
-// queda expuesto en el navegador del visitante.
-//
-// FLUJO:
-// Tu página → este Worker → Meta CAPI
-// ============================================================
-
-// ── CONFIGURACIÓN ───────────────────────────────────────────
-
-// Pixel ID del Megapack Productividad Total
 const PIXEL_ID = '1513589057113085';
 
-// URL de la API de Meta donde se envían los eventos
+
 const META_CAPI_URL = `https://graph.facebook.com/v19.0/${PIXEL_ID}/events`;
 
-// Dominios autorizados para enviar eventos a este Worker
 const ALLOWED_ORIGINS = [
 	'https://mentesmaestras.quest',
 	'https://www.mentesmaestras.quest',
@@ -29,7 +11,6 @@ const ALLOWED_ORIGINS = [
 	'http://localhost:3000',
 ];
 
-// ── WORKER PRINCIPAL ────────────────────────────────────────
 
 export default {
 	async fetch(request, env) {
@@ -106,8 +87,6 @@ export default {
 		}
 	},
 };
-
-// ── FUNCIONES DE APOYO ───────────────────────────────────────
 
 function generateEventId() {
 	return `evt_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
