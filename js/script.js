@@ -335,13 +335,6 @@
         });
 
 
-
-    /* ======================================================================
-    BLOQUE 8 — ANIMACIÓN DE ENTRADA (Antes/Después y Esto es para ti si...)
-    ------------------------------------------------------------------------
-    Mismo mecanismo de fade-up al hacer scroll que ya usamos en otras
-    tarjetas (Bloque 5), aplicado aquí a .compare-card y .fit-card.
-    ====================================================================== */
     document.addEventListener("DOMContentLoaded", () => {
     const revealCards = document.querySelectorAll(".compare-card, .fit-card");
     if (!revealCards.length) return;
