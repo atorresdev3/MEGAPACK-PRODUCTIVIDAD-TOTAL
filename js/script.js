@@ -36,7 +36,6 @@
         requestAnimationFrame(tick);
     }
 
-    /* ---- Mouse en PC ---- */
     function onPointerDown(e) {
         if (e.pointerType !== "mouse") return;
         isDragging = true;
@@ -62,7 +61,6 @@
     carousel.addEventListener("pointercancel", onPointerUp);
     carousel.addEventListener("pointerleave", onPointerUp);
 
-    /* ---- Dedo en mobile ---- */
     function onTouchStart(e) {
         const touch = e.touches[0];
         startX = touch.clientX;
@@ -113,9 +111,7 @@
     requestAnimationFrame(tick);
     }
 
-    // ✅ DESPUÉS
     document.addEventListener("DOMContentLoaded", () => {
-    // El hero ya funcionaba bien, no se toca
     setupDragCarousel(
         document.querySelector(".hero__carousel"),
         document.querySelector(".hero__track"),
@@ -123,7 +119,6 @@
     );
     });
 
-    // Testimonios espera a que todo cargue (imágenes incluidas)
     window.addEventListener("load", () => {
     setupDragCarousel(
         document.querySelector(".testimonials__carousel"),
@@ -247,14 +242,12 @@
         // cierra todas (solo una abierta a la vez)
         faqItems.forEach((otherItem) => closeItem(otherItem));
 
-        // abre la que se clickeó, si estaba cerrada
         if (!isOpen) {
             openItem(item);
         }
         });
     });
 
-    // recalcula la altura si el usuario rota el celular o cambia el tamaño de ventana
     window.addEventListener("resize", () => {
         faqItems.forEach((item) => {
         const wrapper = item.querySelector(".faq__answer-wrapper");
@@ -297,7 +290,7 @@
         requestAnimationFrame(step);
         } else {
         setValue(end);
-         priceWrapper.classList.add("is-urgent"); // 👈 arranca el pulso de urgencia al terminar
+        priceWrapper.classList.add("is-urgent"); 
         }
     }
 

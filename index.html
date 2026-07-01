@@ -54,7 +54,6 @@
     <!-- ============================================================ -->
 
     <script>
-        // ── CONFIGURACIÓN ─────────────────────────────────────────
         const MM_CONFIG = {
             pixelId:   '1513589057113085',
             workerUrl: 'https://meta-capi-megapack.mentesmaestrasdigital.workers.dev',
@@ -72,8 +71,6 @@
 
         window.__MM_sendCAPI = async function(eventName, eventId, customData = {}) {
             try {
-            // Si el visitante llegó desde un anuncio de Meta,
-            // la URL contiene ?fbclid=... — lo capturamos y guardamos en cookie
             const urlParams = new URLSearchParams(window.location.search);
             const fbclid = urlParams.get('fbclid');
             if (fbclid) {
