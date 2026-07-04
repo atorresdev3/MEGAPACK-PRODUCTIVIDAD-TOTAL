@@ -343,7 +343,7 @@ html {
 .modules {
   position: relative;
   overflow: hidden;
-  padding-block: var(--space-6) var(--space-7);
+  padding-block: var(--space-6) var(--space-4);
   background: var(--bg-deep);
 }
 
@@ -370,8 +370,8 @@ html {
 }
 
 .modules__title {
-  font-family: var(--font-display);
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-weight: 800;
   font-size: clamp(1.5rem, 4vw, 2.25rem);
   line-height: 1.3;
   max-width: 32ch;
@@ -436,15 +436,16 @@ html {
 }
 
 .module-card__title {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.5rem;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.4rem;
   color: var(--text-primary);
+  letter-spacing: -0.01em;
 }
 
 .module-card__desc {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
@@ -480,13 +481,18 @@ html {
   line-height: 1.5;
 }
 
+.highlight-gold {
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
 /* ============================
    8. BONUS (Bloque 4)
    ============================ */
 .bonus {
   position: relative;
   overflow: hidden;
-  padding-block: var(--space-6) var(--space-7);
+  padding-block: var(--space-4) var(--space-7);
   background: var(--bg-deep);
 }
 
@@ -513,12 +519,13 @@ html {
 }
 
 .bonus__intro {
-  font-family: var(--font-display);
-  font-style: italic;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-style: normal;
   color: var(--text-primary);
-  font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+  font-size: clamp(1.25rem, 3.5vw, 1.75rem);
   max-width: 42ch;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .bonus__grid {
@@ -590,11 +597,12 @@ html {
 }
 
 .bonus-card__title {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.25rem;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.2rem;
   margin-top: var(--space-1);
   color: var(--text-primary);
+  letter-spacing: -0.01em;
 }
 
 .bonus-card__desc {
@@ -615,8 +623,8 @@ html {
 .bonus-card__price-old {
   color: var(--red-strike);
   text-decoration: line-through;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .bonus-card__price-free {
@@ -769,6 +777,14 @@ html {
   text-align: left;
   background: var(--bg-elevated);
   border: 1px solid rgba(199, 132, 59, 0.25);
+  opacity: 0;                                    
+  transform: translateY(24px);                
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+}
+
+.path-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .path-card__heading {
@@ -1126,10 +1142,19 @@ html {
 .offer-card__price {
   font-family: var(--font-body);
   font-weight: 800;
-  letter-spacing: -0.01em;
-  font-size: clamp(2.75rem, 9vw, 3.75rem);
+  letter-spacing: -0.03em;
+  font-size: clamp(3.5rem, 13vw, 5.5rem);
   color: var(--bg-deep);
   margin-top: var(--space-1);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.offer-card__price span {
+  font-size: 0.55em;
+  font-weight: 800;
+  margin-inline-start: 0.2rem;
+  vertical-align: middle;
 }
 
 .offer-card__price span {

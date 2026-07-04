@@ -329,7 +329,9 @@
 
 
     document.addEventListener("DOMContentLoaded", () => {
-    const revealCards = document.querySelectorAll(".compare-card, .fit-card");
+    const revealCards = document.querySelectorAll(
+    ".compare-card, .fit-card, .path-card",
+    );
     if (!revealCards.length) return;
 
     const observer = new IntersectionObserver(
