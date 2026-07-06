@@ -118,10 +118,11 @@
 
         fbq('init', '1513589057113085');
 
-        fbq('track', 'PageView', {}, { eventID: window.__MM_eventId('PageView') });
+        const pageViewEventId = window.__MM_eventId('PageView');
+        fbq('track', 'PageView', {}, { eventID: pageViewEventId });
 
         document.addEventListener('DOMContentLoaded', function() {
-            window.__MM_sendCAPI('PageView', window.__MM_eventId('PageView'));
+        window.__MM_sendCAPI('PageView', pageViewEventId);
         });
     </script>
 
