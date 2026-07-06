@@ -60,6 +60,7 @@ export default {
 						custom_data: event_data?.custom_data || {},
 					},
 				],
+				test_event_code: 'TEST56544',
 			};
 
 			const metaResponse = await fetch(META_CAPI_URL, {
