@@ -8,7 +8,7 @@
     --ink-muted: #4D6473;
     --gold: #C7843B;
     --gold-light: #F3BD68;
-    --red-strike: #A6342A;
+    --red-strike: #ff1500;
 
     --text-primary: #F4EFE6;
     --text-secondary: #A9BAC4;
@@ -969,6 +969,7 @@ html {
 }
 
 .testimonials__card {
+  margin: 0;
   flex-shrink: 0;
   width: clamp(200px, 75vw, 340px);
   border-radius: var(--radius-lg);
@@ -980,6 +981,7 @@ html {
 .testimonials__card img {
   width: 100%;
   height: auto;
+  aspect-ratio: 1080 / 1350;
   display: block;
   -webkit-user-drag: none;
   user-select: none;
@@ -1049,7 +1051,7 @@ html {
   position: relative;
   width: 100%;
   max-width: 560px;
-  background: var(--text-primary);
+  background: #ffffff;
   border-radius: var(--radius-lg);
   margin-top: 150px;
   padding: var(--space-6) var(--space-4) var(--space-5);
@@ -1109,7 +1111,7 @@ html {
 }
 
 .offer-card__free {
-  color: var(--gold);
+  color: #4FBF6B;
   font-weight: 700;
   margin-inline-start: 0.25rem;
 }
