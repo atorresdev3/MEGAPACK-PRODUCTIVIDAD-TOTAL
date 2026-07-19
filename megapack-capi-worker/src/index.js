@@ -3,7 +3,7 @@
 // ============================================================
 
 const PIXEL_ID = '1067595579179473';
-const META_CAPI_URL = `https://graph.facebook.com/v19.0/${PIXEL_ID}/events`;
+const META_CAPI_URL = `https://graph.facebook.com/v22.0/${PIXEL_ID}/events`;
 
 const ALLOWED_ORIGINS = [
 	'https://mentesmaestras.quest',
